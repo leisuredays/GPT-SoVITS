@@ -1363,8 +1363,10 @@ async def tts_endpoint(
     refer_wav_path: str = None,
     prompt_text: str = None,
     prompt_language: str = None,
+    prompt_lang: str = None,   # 추가
     text: str = None,
     text_language: str = None,
+    text_lang: str = None,     # 추가
     cut_punc: str = None,
     top_k: int = 15,
     top_p: float = 1.0,
@@ -1374,6 +1376,11 @@ async def tts_endpoint(
     sample_steps: int = 32,
     if_sr: bool = False,
 ):
+    
+    # 이름 매칭 작업 추가
+    if text_language is None: text_language = text_lang
+    if prompt_language is None: prompt_language = prompt_lang
+    
     return handle(
         refer_wav_path,
         prompt_text,
