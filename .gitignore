@@ -193,3 +193,15 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+# Serena MCP memories
+.serena/memories/
+.mcp.json
+
+# Test archives and temporary files
+.archive/
+chunks_*/
+speed_comparison_*.json
+test_*.wav
+latency_test_*.wav
+api_v2_*.log
